@@ -13,13 +13,14 @@ class CreateProductensTable extends Migration
      */
     public function up()
     {
-        Schema::create('producten', function (Blueprint $table) {
+        Schema::create('productens', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->string('imagepath');
             $table->string('title');
             $table->text('description');
             $table->integer('price');
+            $table->integer('category_id');
             
             
         });
@@ -35,3 +36,4 @@ class CreateProductensTable extends Migration
         Schema::dropIfExists('productens');
     }
 }
+

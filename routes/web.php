@@ -13,7 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'webshopController@index');
+Route::get('/', [
+    'uses' => 'products_controller@getProducts',
+    'as' => 'products.index'
+]);
 
 Auth::routes();
 

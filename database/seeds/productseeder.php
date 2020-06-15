@@ -16,7 +16,7 @@ class productseeder extends Seeder
             'title' => 'Dead island',
             'description' => 'BOE! Je schrok he? net zoveel als als je dit spel gaat spelen',
             'price' => 10,
-            'category' => 'games'
+            'category_id' => 1,
         ]);
         $product->save();
         $product = new \App\producten([
@@ -24,7 +24,7 @@ class productseeder extends Seeder
             'title' => 'Pim van de petteflat',
             'description' => 'Een boek over het ernstige leven van Rupsje nooitgenoeg',
             'price' => 13,
-            'category' => 'boeken'
+            'category_id' => 2,
         ]);
         $product->save();
         $product = new \App\producten([
@@ -32,7 +32,7 @@ class productseeder extends Seeder
             'title' => 'Philips De mooie mixer',
             'description' => 'Een mixer voor alleen kwarktaart. als je hem gebruikt voor wat anders, omploft ie',
             'price' => 101,
-            'category' => 'keuken'
+            'category_id' => 3,
         ]);
         $product->save();
         $product = new \App\producten([
@@ -40,7 +40,7 @@ class productseeder extends Seeder
             'title' => 'Hond',
             'description' => 'Deze hond is heel trouw. hij kan een stok halen enzo. hij kan misschien zelfs je krant halen voor je, jij luie zak',
             'price' => 101,
-            'category' => 'dieren'
+            'category_id' => 4,
         ]);
         $product->save();
         

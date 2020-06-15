@@ -17,7 +17,7 @@ class CategoryProducts extends Migration
             $table->unsignedInteger('category_id');
             $table->unsignedInteger('product_id');
             $table->foreign('category_id')->references('id')->on('categories');
-            $table->foreign('product_id')->references('id')->on('products');
+            $table->foreign('product_id')->references('id')->on('productens');
 
             $table->primary(['category_id', 'product_id']);
 
