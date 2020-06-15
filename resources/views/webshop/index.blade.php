@@ -18,7 +18,7 @@ Laravel Webshop
                 <h5 class="card-title">{{ $product->title }}</h5>
                 <p class="card-text">{{ $product->description }}</p>
                 <div class="price float-left">$ {{ $product->price }}</div>
-                <a href="#" class="btn btn-success float-right"><i class="fas fa-plus"></i> Add to card</a>
+                <a href="{{ route('product.addToCart', ['id' => $product->id]) }}" class="btn btn-success float-right"><i class="fas fa-plus"></i> Add to card</a>
             </div>
         </div>
     
