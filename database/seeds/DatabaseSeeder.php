@@ -11,6 +11,17 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-         $this->call(productseeder::class);
+        $this->call(productseeder::class);
+
+        $this->call(categoryseeder::class);
+
+      /*    factory(App\Category::class, 10)->create()->each(function ($p) {
+        	$p->products()->save(factory(App\Product::class)->make());
+        	$p->products()->save(factory(App\Product::class)->make());
+        	$p->products()->save(factory(App\Product::class)->make());
+        	$p->products()->save(factory(App\Product::class)->make());
+    	});  */
     }
+    
+
 }

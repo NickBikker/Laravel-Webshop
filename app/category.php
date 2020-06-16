@@ -4,10 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class category extends Model
+class Category extends Model
 {
     public function products()
     {
-        return $this->belongsToMany('App\product');
+        return $this->belongsToMany('App\Product');
     }
 }

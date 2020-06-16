@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [
-    'uses' => 'products_controller@getProducts',
+    'uses' => 'ProductController@getProducts',
     'as' => 'products.index'
 ]);
 
@@ -23,7 +23,17 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/add-to-cart/{id}', [
-    'uses' => 'products_controller@getAddToCart',
+    'uses' => 'ProductController@getAddToCart',
     'as' => 'product.addToCart'
 ]);
 
+Route::get('/product_page/{id}', [
+    'uses' => 'ProductController@getProduct',
+    'as' => 'products.product'
+]);
+
+
+Route::get('/shoppingCart', [
+    'uses' => 'ProductController@getCart',
+    'as' => 'webshop.shoppingCart'
+]);

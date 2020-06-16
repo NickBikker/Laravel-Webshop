@@ -1,3 +1,5 @@
+
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="{{ url('/') }}">Laravel webshop</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,7 +12,10 @@
       <a class="nav-item nav-link" href="#">Pricing</a>
     @if (Route::has('login'))
     <div class="top-right links">
-    <a class="nav-item" href="#"><i class="fas fa-shopping-cart"></i> Shopping Cart</a>
+    <a class="nav-item" href="{{ route('webshop.shoppingCart') }}"
+    ><i class="fas fa-shopping-cart"></i> Shopping Cart
+    <span class="badge badge-danger">{{ Session::has('cart') ? Session::get('cart')->totalQuantity : 'smikkel' }}</span>
+  </a>
         @auth
         <a href="{{ url('/home') }}"><i class="fas fa-user"></i> Home</a>
         @else
