@@ -15,6 +15,8 @@ class DatabaseSeeder extends Seeder
 
         $this->call(categoryseeder::class);
 
+        $this->call(categoryProductSeeder::class);
+
       /*    factory(App\Category::class, 10)->create()->each(function ($p) {
         	$p->products()->save(factory(App\Product::class)->make());
         	$p->products()->save(factory(App\Product::class)->make());

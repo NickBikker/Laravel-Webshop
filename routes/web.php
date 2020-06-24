@@ -37,3 +37,20 @@ Route::get('/shoppingCart', [
     'uses' => 'ProductController@getCart',
     'as' => 'webshop.shoppingCart'
 ]);
+
+Route::get('/reduce/{id}', [
+    'uses' => 'ProductController@getReduce',
+    'as' => 'product.reduceOne'
+
+]);
+
+Route::get('/remove/{id}', [
+    'uses' => 'ProductController@getEmpty',
+    'as' => 'product.remove'
+
+]);
+
+Route::get('/category/{id}', [
+    'uses' => 'ProductController@getProductsFromCatId',
+    'as' => 'webshop.category'
+]);
