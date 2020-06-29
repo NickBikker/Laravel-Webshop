@@ -59,7 +59,14 @@ Shopping Cart
                             <h5 class="font-weight-bold">€{{$totalPrice}},-</h5>
                         </li>
                     </ul>
-                    <a href="#" class="btn btn-dark rounded-pill py-2 btn-block">Procceed to checkout</a>
+                    @auth
+                    <form action="{{ route('products.checkout') }}" method="post">
+                    <button class="btn btn-dark rounded-pill py-2 btn-block" type="submit">Procceed to checkout</button>
+                    {{ csrf_field() }}
+                    </form>
+                    @else
+                    <p class="alert alert-danger text-center">please login</p>
+                    @endauth
                 </div>
 
             </div>

@@ -16,6 +16,9 @@
           @endforeach
         </div>
       </li>
+      @auth
+      <a class="nav-item nav-link" href="{{ route('webshop.orderPage') }}">Orders</a>
+      @endauth
       @if (Route::has('login'))
       <div class="top-right links">
         <a class="nav-item" href="{{ route('webshop.shoppingCart') }}"><i class="fas fa-shopping-cart"></i> Shopping Cart

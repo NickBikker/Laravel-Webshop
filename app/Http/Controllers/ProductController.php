@@ -5,10 +5,11 @@ namespace App\Http\Controllers;
 use App\Cart;
 use App\Product;
 use App\Category;
+use App\order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-
+use Auth;
 use App\Http\Requests;
 
 
@@ -86,6 +87,29 @@ class ProductController extends Controller
         $categories = Category::all();
 
         return view('webshop.category', ['products' => $products, 'category' => $category, 'categories' => $categories]);
+    }
+
+    public function postCheckout(Request $request){
+        if (!$request->session()->has('cart')){
+            return redirect()->route('webshop.shoppingCart');            
+        }
+        $oldCart = $request->session()->get('cart');
+        $cart = new Cart($oldCart);
+
+        try {
+            $order = new order();
+            $order->products = serialize($cart);
+            
+
+            Auth::user()->orders()->save($order);
+
+        } catch (\Exception $e) {
+            return redirect()->route('webshop.shoppingCart', ['error' => $e->getMessage()]);
+        }
+
+        $request->session()->forget('cart');
+        return redirect()->route('products.index')->with('success', 'Successfully purchased products!');
+
     }
 
 }

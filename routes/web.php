@@ -54,3 +54,13 @@ Route::get('/category/{id}', [
     'uses' => 'ProductController@getProductsFromCatId',
     'as' => 'webshop.category'
 ]);
+
+Route::post('/checkout', [
+    'uses' => 'ProductController@postCheckout',
+    'as' => 'products.checkout'
+]);
+
+Route::get('/orders', [
+    'uses' => 'OrderController@getOrders',
+    'as' => 'webshop.orderPage'
+]);
